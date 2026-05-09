@@ -1,86 +1,120 @@
-/* 全域設定 */
+/* --- 糊裡糊途：感官 Noir 風格核心 --- */
+:root {
+    --guide-yellow: #FFD700; /* 導盲磚亮黃色 */
+    --sound-cyan: #00f2ff;   /* 聲音波動青色 */
+    --bg-dark: #0a0a0a;      /* 極致黑 */
+}
+
 body {
-    background-color: #121212;
-    color: #ffffff;
+    background-color: var(--bg-dark);
+    /* 增加顆粒感背景，模擬視覺噪點 */
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(20, 20, 20, 1) 0%, rgba(0, 0, 0, 1) 100%),
+        url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); 
+    color: #e0e0e0;
     font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    letter-spacing: 0.08rem;
     line-height: 1.8;
 }
 
-/* 導覽列 */
+/* 導覽列：毛玻璃效果 */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.9) !important;
-    border-bottom: 1px solid #333;
+    background: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(15px); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+.navbar-brand {
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: var(--guide-yellow) !important;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
 .nav-link {
-    color: #bbb !important;
+    color: #888 !important;
     transition: 0.3s;
 }
+
 .nav-link:hover, .nav-link.active {
     color: #fff !important;
+    text-shadow: 0 0 8px #fff;
 }
 
-/* 區塊標題 */
-h2 {
-    font-weight: bold;
-    margin-bottom: 2rem;
-    letter-spacing: 2px;
-}
-
-/* 圖片容器與特效 */
+/* 圖片容器：發光外框 */
 .img-container {
     margin-bottom: 2rem;
     border-radius: 12px;
     overflow: hidden;
-    background-color: #222;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #000;
+    transition: all 0.5s ease;
 }
+
+.img-container:hover {
+    border-color: var(--guide-yellow);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.2);
+}
+
 .img-fluid {
     width: 100%;
-    height: auto;
     transition: transform 0.4s;
 }
-.img-fluid:hover {
-    transform: scale(1.03);
+
+/* 互動：模糊文字特效 */
+.blurred-intro {
+    filter: blur(4px);
+    transition: filter 0.8s ease;
+    cursor: pointer;
+}
+.blurred-intro:hover {
+    filter: blur(0); 
 }
 
-/* 影片區（電視框風格） */
+/* 影片區塊 */
 .video-section {
-    max-width: 800px;
+    max-width: 850px;
     margin: 3rem auto;
-    padding: 20px;
-    border: 2px solid #444;
-    border-radius: 20px;
+    padding: 15px;
     background: #000;
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    box-shadow: 0 0 50px rgba(0, 242, 255, 0.1);
+    border-radius: 20px;
 }
 
-/* 成員與老師頭像 */
-.member-card {
-    text-align: center;
-    margin-bottom: 3rem;
-}
+/* 成員與老師樣式 */
 .member-img {
     width: 140px;
     height: 140px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1rem;
-    border: 3px solid #444;
+    border: 3px solid #333;
+    transition: 0.3s;
 }
-.role-tag {
-    font-size: 0.85rem;
-    color: #aaa;
+
+.member-card:hover .member-img {
+    border-color: var(--guide-yellow);
+    box-shadow: 0 0 15px var(--guide-yellow);
 }
 
 /* 頁尾 */
 .footer {
-    background-color: #d3d3d3;
-    color: #333;
-    padding: 30px 0;
+    background: #000;
+    border-top: 1px solid var(--guide-yellow);
+    padding: 4rem 0;
     margin-top: 5rem;
-    text-align: center;
 }
-.footer a {
-    color: #333;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
+
+.social-icons a {
+    color: var(--guide-yellow) !important;
+    font-size: 1.8rem;
+    margin: 0 15px;
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.3));
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px) scale(1.2);
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
 }
