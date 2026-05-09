@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>展覽資訊 - 糊裡糊途</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 展覽頁面專屬樣式 */
+        .exhibit-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            transition: 0.3s;
+            height: 100%;
+        }
+        .exhibit-card:hover {
+            border-color: var(--guide-yellow);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+            transform: translateY(-5px);
+        }
+        .exhibit-date {
+            color: var(--guide-yellow);
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #333;
+            /* 讓地圖變成深色模式質感 */
+            filter: grayscale(1) invert(0.9) contrast(1.2); 
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">糊裡糊途 Shady Trip</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
+                <li class="nav-item"><a class="nav-link" href="story.html">體驗與劇情</a></li>
+                <li class="nav-item"><a class="nav-link" href="features.html">特色機制</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">關於我們</a></li>
+                <li class="nav-item"><a class="nav-link active" href="exhibition.html">展覽資訊</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="container my-5 text-center">
+    <h2 class="mb-5">展覽資訊</h2>
+
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-5 text-start">
+            <div class="exhibit-card">
+                <span class="exhibit-date"><i class="bi bi-calendar-check"></i> 2026.04.18 - 04.19</span>
+                <h3>校內畢業展</h3>
+                <p class="text-secondary">「UNFORMATTED」- 大同大學 15 屆數媒系</p>
+                <hr class="border-secondary">
+                <p><i class="bi bi-geo-alt-fill text-warning"></i> 大同大學 尚志教育研究館 3F</p>
+            </div>
+        </div>
+
+        <div class="col-md-5 text-start">
+            <div class="exhibit-card">
+                <span class="exhibit-date"><i class="bi bi-calendar-heart"></i> 2026.05.22 - 05.25</span>
+                <h3>新一代設計展</h3>
+                <p class="text-secondary">全世界以學生為主最大型之設計展覽</p>
+                <hr class="border-secondary">
+                <p><i class="bi bi-geo-alt-fill text-warning"></i> 南港展覽館 2 館 4F</p>
+                <p><i class="bi bi-pin-map-fill text-warning"></i> 展位：D-20</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5 justify-content-center">
+        <div class="col-lg-10">
+            <h4 class="mb-4">如何找到我們？</h4>
+            <div class="map-container shadow-lg">
+                <iframe 
+                    src="https://maps.app.goo.gl/NMp8thUM1XY2AUrFA" 
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer text-center">
+    <div class="container">
+        <div class="social-icons mb-3">
+            <a href="https://www.instagram.com/shadytrip.vr" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1DvmxkVkBs/" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://youtube.com/channel/UC8jtdJxq7cfZAcqi0LC451g" target="_blank"><i class="bi bi-youtube"></i></a>
+        </div>
+        
+        <p class="small mb-0">
+            <span class="d-block d-md-inline">UNFORMATTED</span>
+            <span class="d-block d-md-inline">大同大學 15 屆數位媒體設計學系畢業展</span>
+        </p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
