@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>關於我們 - 糊裡糊途</title>
-    <!-- 引入 Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- 引入 Bootstrap Icons (用於社群圖標) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
     <style>
@@ -18,11 +16,12 @@
             transition: color 0.3s ease;
         }
         .social-icons a:hover {
-            color: #0d6efd; /* 懸停時顏色，可自行更改 */
+            color: #0d6efd; 
         }
-        /* 調整成員卡片在不同裝置間距 */
+        /* 調整成員與老師卡片間距，並確保發光效果觸發 */
         .member-card {
             margin-bottom: 2rem;
+            transition: 0.3s;
         }
     </style>
 </head>
@@ -40,21 +39,19 @@
                 <li class="nav-item"><a class="nav-link" href="story.html">體驗與劇情</a></li>
                 <li class="nav-item"><a class="nav-link" href="features.html">特色機制</a></li>
                 <li class="nav-item"><a class="nav-link active" href="about.html">關於我們</a></li>
-				<li class="nav-item"><a class="nav-link" href="exhibition.html">展覽資訊</a></li>
+                <li class="nav-item"><a class="nav-link" href="exhibition.html">展覽資訊</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
 <main class="container my-5 text-center">
-    <!-- 團隊合照區 -->
     <div class="img-container mb-5">
         <img src="images/team.JPEG" class="img-fluid rounded" alt="團隊合照">
     </div>
 
     <h2 class="mb-5">製作成員</h2>
     
-    <!-- 成員第一排：2位 (置中) -->
     <div class="row justify-content-center mb-md-4">
         <div class="col-sm-6 col-md-4 member-card">
             <img src="images/S1.jpg" class="member-img" alt="林啓諴">
@@ -70,7 +67,6 @@
         </div>
     </div>
 
-    <!-- 成員第二排：3位 (置中) -->
     <div class="row justify-content-center">
         <div class="col-sm-6 col-md-4 member-card">
             <img src="images/S3.jpg" class="member-img" alt="張蓮華">
@@ -92,20 +88,19 @@
         </div>
     </div>
 
-    <!-- 指導老師區塊 -->
     <h2 class="mt-5 mb-5">指導老師</h2>
     <div class="row justify-content-center">
-        <div class="col-md-3">
+        <div class="col-sm-6 col-md-4 member-card">
             <img src="images/T1.jpg" class="member-img" alt="趙君傑">
             <p class="fw-bold">趙君傑 老師</p>
             <p class="small text-secondary">專題指導老師</p>
         </div>
-        <div class="col-md-3">
+        <div class="col-sm-6 col-md-4 member-card">
             <img src="images/T2.jpg" class="member-img" alt="程東奕">
             <p class="fw-bold">程東奕 老師</p>
             <p class="small text-secondary">總指導</p>
         </div>
-        <div class="col-md-3">
+        <div class="col-sm-6 col-md-4 member-card">
             <img src="images/T3.jpg" class="member-img" alt="李文淵">
             <p class="fw-bold">李文淵 老師</p>
             <p class="small text-secondary">總指導</p>
@@ -113,7 +108,6 @@
     </div>
 </main>
 
-<!-- 修改後的 Footer -->
 <footer class="footer">
     <div class="container text-center">
         <div class="social-icons mb-3">
@@ -122,9 +116,9 @@
             <a href="https://youtube.com/channel/UC8jtdJxq7cfZAcqi0LC451g?si=6kQLXERl_4jx8a_7" target="_blank" title="YouTube"><i class="bi bi-youtube"></i></a>
         </div>
         <p class="small mb-0">
-    <span class="d-block d-md-inline">UNFORMATTED</span>
-    <span class="d-block d-md-inline">大同大學 15 屆數位媒體設計學系畢業展</span>
-</p>
+            <span class="d-block d-md-inline">UNFORMATTED</span>
+            <span class="d-block d-md-inline">大同大學 15 屆數位媒體設計學系畢業展</span>
+        </p>
     </div>
 </footer>
 

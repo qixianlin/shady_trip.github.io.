@@ -33,8 +33,21 @@
             border-radius: 15px;
             overflow: hidden;
             border: 1px solid #333;
-            /* 讓地圖變成深色模式質感 */
+            /* 讓地圖變成酷酷的深色模式質感 */
             filter: grayscale(1) invert(0.9) contrast(1.2); 
+        }
+        /* 購票按鈕自定義樣式 */
+        .btn-ticket {
+            background-color: transparent;
+            color: var(--guide-yellow);
+            border: 1px solid var(--guide-yellow);
+            transition: 0.3s;
+            width: 100%;
+        }
+        .btn-ticket:hover {
+            background-color: var(--guide-yellow);
+            color: #000;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
         }
     </style>
 </head>
@@ -73,13 +86,20 @@
         </div>
 
         <div class="col-md-5 text-start">
-            <div class="exhibit-card">
-                <span class="exhibit-date"><i class="bi bi-calendar-heart"></i> 2026.05.22 - 05.25</span>
-                <h3>新一代設計展</h3>
-                <p class="text-secondary">全世界以學生為主最大型之設計展覽</p>
-                <hr class="border-secondary">
-                <p><i class="bi bi-geo-alt-fill text-warning"></i> 南港展覽館 2 館 4F</p>
-                <p><i class="bi bi-pin-map-fill text-warning"></i> 展位：D-20</p>
+            <div class="exhibit-card d-flex flex-column">
+                <div>
+                    <span class="exhibit-date"><i class="bi bi-calendar-heart"></i> 2026.05.22 - 05.25</span>
+                    <h3>新一代設計展</h3>
+                    <p class="text-secondary">全世界以學生為主最大型之設計展覽</p>
+                    <hr class="border-secondary">
+                    <p><i class="bi bi-geo-alt-fill text-warning"></i> 南港展覽館 2 館 4F</p>
+                    <p><i class="bi bi-pin-map-fill text-warning"></i> 展位：D-20</p>
+                </div>
+                <div class="mt-auto">
+                    <a href="https://tour.ibon.com.tw/event/697820af02bb617c455defbe" target="_blank" class="btn btn-ticket mt-3">
+                        <i class="bi bi-ticket-perforated"></i> 立即購票
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -89,7 +109,7 @@
             <h4 class="mb-4">如何找到我們？</h4>
             <div class="map-container shadow-lg">
                 <iframe 
-                    src="https://maps.app.goo.gl/NMp8thUM1XY2AUrFA" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.352873788722!2d121.6162474!3d25.0560263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab580d17a6d3%3A0x83d8e0571ebbd90a!2z5Y-w5YyX5Y2X5riv5bGV6Ka96aSoMumkqA!5e0!3m2!1szh-TW!2stw!4v1778361009016!5m2!1szh-TW!2stw" 
                     width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
                 </iframe>
             </div>
@@ -100,9 +120,9 @@
 <footer class="footer text-center">
     <div class="container">
         <div class="social-icons mb-3">
-            <a href="https://www.instagram.com/shadytrip.vr" target="_blank"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.facebook.com/share/1DvmxkVkBs/" target="_blank"><i class="bi bi-facebook"></i></a>
-            <a href="https://youtube.com/channel/UC8jtdJxq7cfZAcqi0LC451g" target="_blank"><i class="bi bi-youtube"></i></a>
+            <a href="https://www.instagram.com/shadytrip.vr" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1DvmxkVkBs/" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://youtube.com/channel/UC8jtdJxq7cfZAcqi0LC451g" target="_blank" title="YouTube"><i class="bi bi-youtube"></i></a>
         </div>
         
         <p class="small mb-0">
