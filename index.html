@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>糊裡糊途 Shady Trip - 首頁</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 針對圖標的額外樣式 */
+        .social-icons a {
+            font-size: 1.5rem;
+            color: #333;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #0d6efd; 
+        }
+        /* 增加中間介紹文字的行高，讓閱讀更舒適 */
+        .intro-text {
+            line-height: 1.8;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">糊裡糊途 Shady Trip</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">首頁</a></li>
+                <li class="nav-item"><a class="nav-link" href="story.html">體驗與劇情</a></li>
+                <li class="nav-item"><a class="nav-link" href="features.html">特色機制</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">關於我們</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="container text-center mt-5">
+    <div class="img-container">
+        <!-- 建議確認圖片路徑是否正確 -->
+        <img src="images/key_visual.JPEG" class="img-fluid" alt="主視覺">
+    </div>
+    
+    <!-- 修改重點：將 text-start 改為 text-center，並加入 fs-4 讓文字變大 -->
+    <div class="row justify-content-center py-5">
+        <div class="col-md-10 text-center">
+            <p class="fs-4 intro-text">
+                《糊裡糊途》是視覺受限的 VR 探索遊戲。 
+				<br>玩家扮演因術後誤會而陷入失明恐懼的淑芬，
+				<br>依靠「聽位」與「導盲磚回饋」以穿越城市，
+				<br>藉由體驗感官失能的不便，珍視自身並同理他人。
+            </p>
+        </div>
+    </div>
+</header>
+
+<section class="container text-center">
+    <div class="video-section">
+        <div class="ratio ratio-16x9">
+            <!-- 修正：已更換為 YouTube 嵌入格式網址 -->
+            <iframe src="https://www.youtube.com/embed/orDWSTn3mhE" title="YouTube video" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container text-center">
+        <div class="social-icons mb-3">
+            <a href="https://www.instagram.com/shadytrip.vr?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1DvmxkVkBs/?mibextid=wwXIfr" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://youtube.com/channel/UC8jtdJxq7cfZAcqi0LC451g?si=6kQLXERl_4jx8a_7" target="_blank" title="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+        <p class="small mb-0">UNFORMATTED | 大同大學 15 屆數位媒體設計學系畢業展</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
