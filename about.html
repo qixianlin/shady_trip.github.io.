@@ -8,17 +8,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* 針對圖標的額外樣式 */
-        .social-icons a {
-            font-size: 1.5rem;
-            color: #333;
-            margin: 0 15px;
-            transition: color 0.3s ease;
+
+        /* 成員個人社群按鈕樣式 */
+        .member-links a {
+            font-size: 1.2rem;
+            color: #888;
+            margin: 0 8px;
+            transition: 0.3s;
         }
-        .social-icons a:hover {
-            color: #0d6efd; 
+        .member-links a:hover {
+            color: #FFD700; /* 使用導盲磚黃色作為懸停色 */
+            filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.8));
         }
-        /* 調整成員與老師卡片間距，並確保發光效果觸發 */
+
+        /* 調整成員與老師卡片間距 */
         .member-card {
             margin-bottom: 2rem;
             transition: 0.3s;
@@ -30,8 +33,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
         <a class="navbar-brand" href="index.html">
-			<img src="images/LOGO.PNG" alt="糊裡糊途 Logo" style="height: 40px;">
-		</a>
+            <img src="images/LOGO.PNG" alt="糊裡糊途 Logo" style="height: 40px;">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -58,14 +61,23 @@
         <div class="col-sm-6 col-md-4 member-card">
             <img src="images/S1.jpg" class="member-img" alt="林啓諴">
             <h5>林啓諴</h5>
+			<div class="member-links">
+                <a href="https://www.instagram.com/1qx_zzz?igsh=MW5sNDJrNDN1dzlwZg%3D%3D" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="http://www.linkedin.com/in/qixianlin" target="_blank"><i class="bi bi-linkedin"></i></a>
+            </div>
+            <p class="r
             <p class="role-tag">遊戲程式 | 網頁 | 3D角色建模 | 社群</p>
-            <p class="small">qixianlin0615@gmail.com</p>
+            <p class="small mb-1">qixianlin0615@gmail.com</p>
         </div>
         <div class="col-sm-6 col-md-4 member-card">
             <img src="images/S2.jpg" class="member-img" alt="張倍榛">
             <h5>張倍榛</h5>
+			<div class="member-links">
+                <a href="https://www.instagram.com/zhen.c__?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
+            </div>
             <p class="role-tag">遊戲企劃 | 3D角色建模</p>
-            <p class="small">b.etty20040520@gmail.com</p>
+            <p class="small mb-1">b.etty20040520@gmail.com</p>
         </div>
     </div>
 
@@ -73,20 +85,35 @@
         <div class="col-sm-6 col-md-4 member-card">
             <img src="images/S3.jpg" class="member-img" alt="張蓮華">
             <h5>張蓮華</h5>
+			<div class="member-links">
+                <a href="https://www.instagram.com/lh__1030?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
+            </div>
+            <p class="r
             <p class="role-tag">遊戲企劃 | 遊戲程式</p>
-            <p class="small">anna1030@g.ntsh.ntpc.edu.tw</p>
+            <p class="small mb-1">anna1030@g.ntsh.ntpc.edu.tw</p>
         </div>
         <div class="col-sm-6 col-md-4 member-card">
             <img src="images/S4.jpg" class="member-img" alt="曾鈺文">
             <h5>曾鈺文</h5>
+			<div class="member-links">
+                <a href="https://www.instagram.com/yuwen1219_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
+            </div>
+            <p class="r
             <p class="role-tag">美術｜3D建築建模</p>
-            <p class="small">yuzuu3931@gmail.com</p>
+            <p class="small mb-1">yuzuu3931@gmail.com</p>
         </div>
         <div class="col-sm-6 col-md-4 member-card">
             <img src="images/S5.jpg" class="member-img" alt="羅翊庭">
             <h5>羅翊庭</h5>
+			<div class="member-links">
+                <a href="https://www.instagram.com/lona.bi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
+            </div>
+            <p class="r
             <p class="role-tag">AR動畫</p>
-            <p class="small">lo.eating.213@gmail.com</p>
+            <p class="small mb-1">lo.eating.213@gmail.com</p>
         </div>
     </div>
 
@@ -97,12 +124,12 @@
             <p class="fw-bold">趙君傑 老師</p>
             <p class="small text-secondary">專題指導老師</p>
         </div>
-        <div class="col-sm-6 col-md-4 member-card">
+        <div class="col-md-4 member-card">
             <img src="images/T2.jpg" class="member-img" alt="程東奕">
             <p class="fw-bold">程東奕 老師</p>
             <p class="small text-secondary">總指導</p>
         </div>
-        <div class="col-sm-6 col-md-4 member-card">
+        <div class="col-md-4 member-card">
             <img src="images/T3.jpg" class="member-img" alt="李文淵">
             <p class="fw-bold">李文淵 老師</p>
             <p class="small text-secondary">總指導</p>
@@ -118,7 +145,7 @@
             <a href="https://youtube.com/channel/UC8jtdJxq7cfZAcqi0LC451g?si=6kQLXERl_4jx8a_7" target="_blank" title="YouTube"><i class="bi bi-youtube"></i></a>
         </div>
         <p class="small mb-0">
-            <span class="d-block d-md-inline">UNFORMATTED</span>
+            <span class="d-block d-md-inline">UNFORMATTED | </span>
             <span class="d-block d-md-inline">大同大學 15 屆數位媒體設計學系畢業展</span>
         </p>
     </div>
