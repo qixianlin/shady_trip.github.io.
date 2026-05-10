@@ -17,6 +17,19 @@ body {
     line-height: 1.8;
 }
 
+/* 導航欄 Logo 樣式 */
+.navbar-brand img {
+    max-width: 100%;
+    height: auto;
+    /* 如果 Logo 有發光特效需求，可加入以下濾鏡 */
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.3));
+    transition: 0.3s;
+}
+
+.navbar-brand img:hover {
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+}
+
 /* 導覽列：毛玻璃效果 */
 .navbar {
     background: rgba(0, 0, 0, 0.7) !important;
