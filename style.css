@@ -90,8 +90,9 @@ body {
     margin: 3rem auto;
     padding: 15px;
     background: #000;
-    border: 1px solid rgba(0, 242, 255, 0.3);
-    box-shadow: 0 0 50px rgba(0, 242, 255, 0.1);
+    /* 將原先的 0, 242, 255 (青色) 改為 255, 215, 0 (黃色) */
+    border: 1px solid rgba(255, 215, 0, 0.4); 
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.15);
     border-radius: 20px;
 }
 
