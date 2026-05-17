@@ -72,5 +72,127 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<div class="modal fade" id="yodexModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center" style="background: #0a0a0a; border: 2px solid #FFD700; box-shadow: 0 0 30px rgba(255, 215, 0, 0.3); color: #fff; border-radius: 15px;">
+            <div class="modal-header border-0 justify-content-end pb-0">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body py-4">
+                <i class="bi bi-megaphone-fill" style="font-size: 2.5rem; color: #FFD700; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));"></i>
+                <h4 class="mt-3 fw-bold" style="letter-spacing: 2px;">新一代設計展 YODEX</h4>
+                
+                <div id="yodex-content" class="my-4">
+                    </div>
+                
+                <p class="small text-secondary mb-0">歡迎來到大同大學數媒系《糊裡糊途》展位：南港展覽館2館4F (D-12)</p>
+            </div>
+            <div class="modal-footer border-0 justify-content-center pt-0">
+                <button type="button" class="btn btn-sm" data-bs-dismiss="modal" style="background: #FFD700; color: #000; font-weight: bold; border-radius: 20px; padding: 6px 30px; box-shadow: 0 0 15px rgba(255, 215, 0, 0.4); border: none;">進入網站</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // 強制設定 2026 年台灣時間 (+08:00) 的開展與閉展精確時間點
+    const startTime = Date.parse("2026-05-22T10:00:00+08:00");
+    const endTime = Date.parse("2026-05-25T17:00:00+08:00");
+    
+    let modalOpenedBefore = false; // 用於防止小於一天計時器重複觸發開啟視窗
+
+    function updateModalStatus() {
+        const now = Date.now();
+        const contentDiv = document.getElementById("yodex-content");
+        
+        // 【情況一】：展覽已結束 -> 隱藏不顯示
+        if (now > endTime) {
+            return false; 
+        }
+        
+        // 【情況二】：展覽進行中 (5/22 10:00 ~ 5/25 17:00)
+        if (now >= startTime && now <= endTime) {
+            // 精確抓取瀏覽器當前的「台灣台北」 calendar 日期，避免跨國時區錯亂
+            const taipeiDate = new Intl.DateTimeFormat('zh-TW', {
+                timeZone: 'Asia/Taipei',
+                year: 'numeric', month: '2-digit', day: '2-digit'
+            }).format(new Date());
+            
+            let dayText = "";
+            let timeInfo = "";
+            
+            if (taipeiDate.includes("05/22")) {
+                dayText = "展覽第 1 天 (五)";
+                timeInfo = "今日開放時間：10:00 - 17:00 (平日)";
+            } else if (taipeiDate.includes("05/23")) {
+                dayText = "展覽第 2 天 (六)";
+                timeInfo = "今日開放時間：10:00 - 18:00 (假日)";
+            } else if (taipeiDate.includes("05/24")) {
+                dayText = "展覽第 3 天 (日)";
+                timeInfo = "今日開放時間：10:00 - 18:00 (假日)";
+            } else if (taipeiDate.includes("05/25")) {
+                dayText = "展覽第 4 天 (一)";
+                timeInfo = "今日開放時間：10:00 - 17:00 (平日)";
+            } else {
+                dayText = "熱烈展出中！";
+                timeInfo = "歡迎前來現場體驗 VR 冒險";
+            }
+            
+            contentDiv.innerHTML = `
+                <p class="fs-5 mb-1" style="color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);">✨ 現場熱烈展出中 ✨</p>
+                <h2 class="fw-bold text-white mb-2">${dayText}</h2>
+                <p class="small text-warning mb-0"><i class="bi bi-clock"></i> ${timeInfo}</p>
+            `;
+            return true;
+        }
+        
+        // 【情況三】：開展前倒數階段 (now < startTime)
+        const diff = startTime - now;
+        const oneDayInMs = 24 * 60 * 60 * 1000;
+        
+        if (diff > oneDayInMs) {
+            // 大於 1 天：無條件進位顯示天數
+            const daysLeft = Math.ceil(diff / oneDayInMs);
+            contentDiv.innerHTML = `
+                <p class="fs-5 mb-1 text-secondary">距離開展還有</p>
+                <h1 class="fw-bold mb-0" style="color: #FFD700; font-size: 3.2rem; text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);">倒數 ${daysLeft} 天</h1>
+            `;
+            return true;
+        } else {
+            // 小於 1 天：即時計算時、分、秒
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            contentDiv.innerHTML = `
+                <p class="fs-6 mb-2 text-secondary">✨ 倒數低於24小時！即將開展 ✨</p>
+                <h3 class="fw-bold text-white mb-0" style="letter-spacing: 1px;">
+                    <span style="color: #FFD700; text-shadow: 0 0 10px rgba(255,215,0,0.5);">${hours}</span> 小時 
+                    <span style="color: #FFD700; text-shadow: 0 0 10px rgba(255,215,0,0.5);">${minutes}</span> 分 
+                    <span style="color: #FFD700; text-shadow: 0 0 10px rgba(255,215,0,0.5);">${seconds}</span> 秒
+                </h3>
+            `;
+            
+            // 如果是在小於一天內剛重新整理網頁，且還沒開啟過視窗，則主動彈出
+            if (!modalOpenedBefore) {
+                modalOpenedBefore = true;
+                const yodexModalInstance = new bootstrap.Modal(document.getElementById('yodexModal'));
+                yodexModalInstance.show();
+            }
+            
+            // 每秒鐘自我更新一次，達到即時倒數的效果
+            setTimeout(updateModalStatus, 1000);
+            return false; // 由內部控制開啟，外部不重複 init
+        }
+    }
+    
+    // 首次載入網頁時執行檢查
+    if (updateModalStatus()) {
+        const yodexModalInstance = new bootstrap.Modal(document.getElementById('yodexModal'));
+        yodexModalInstance.show();
+    }
+});
+</script>
 </body>
 </html>
